@@ -1,0 +1,187 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <meta http-equiv="Content-Language" content="en-us">
+    <meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+    <meta name="ProgId" content="FrontPage.Editor.Document">
+    <meta http-equiv="Content-Type" content="text/html;
+      charset=windows-1252">
+    <title>Audio Processing and Indexing</title>
+  </head>
+  <body>
+    <div align="center">
+      <center>
+        <table bordercolorlight="#000000" bordercolordark="#000000"
+          style="border-collapse: collapse" width="1018" cellspacing="0"
+          cellpadding="6" bordercolor="#111111" border="1">
+          <tbody>
+            <tr>
+              <td width="197" bgcolor="#003366">
+                <p align="center"> <img src="medialab.gif" width="171"
+                    height="106" border="0"></p>
+              </td>
+              <td colspan="2" width="622" nowrap="nowrap"
+                bgcolor="#FFFFFF">
+                <p align="center"><font size="5">Audio Processing and
+                    Indexing Project Page</font></p>
+                <p align="center"><font size="5">&lt;Classifying albums based on dynamic range values&gt;</font></p>
+                <p align="center">(Last updated: 14-1-2020)</p>
+              </td>
+              <td width="166" bgcolor="#003366"> <img src="logoULE.gif"
+                  width="165" height="106" border="0"></td>
+            </tr>
+            <tr>
+              <td width="197" valign="top" bgcolor="#003366">
+                <p style="margin-top: 0; margin-bottom: 0"><strong> <font
+                      face="Arial" color="#FFFFFF" size="2">Contents</font></strong></p>
+                <ul style="color: #FFFFFF" type="square">
+                  <li>
+                    <p style="margin-top: 0; margin-bottom: 0"><a
+                        href="#Project%20Members"> <font face="Arial"
+                          color="#FFFFFF" size="2">Members</font></a></p>
+                  </li>
+                  <li>
+                    <p style="margin-top: 0; margin-bottom: 0"><a
+                        href="#Goals"> <font face="Arial"
+                          color="#FFFFFF" size="2">Goals</font></a></p>
+                  </li>
+                  <li>
+                    <p style="margin-top: 0; margin-bottom: 0"><a
+                        href="#Abstract"> <font face="Arial"
+                          color="#FFFFFF" size="2">Abstract</font></a></p>
+                  </li>
+                  <li>
+                    <p style="margin-top: 0; margin-bottom: 0"><font
+                        face="Arial" size="2"> <a href="#Introduction"><font
+                            color="#FFFFFF">Introduction</font></a></font></p>
+                  </li>
+                  <li>
+                    <p style="margin-top: 0; margin-bottom: 0"><font
+                        face="Arial" size="2"> <a href="#Design"><font
+                            color="#FFFFFF">Design</font></a></font></p>
+                  </li>
+                  <li>
+                    <p style="margin-top: 0; margin-bottom: 0"><font
+                        face="Arial" size="2"> <a
+                          href="#Implementation"><font color="#FFFFFF">Implementation</font></a></font></p>
+                  </li>
+                  <li>
+                    <p style="margin-top: 0; margin-bottom: 0"><font
+                        face="Arial" size="2"> <a
+                          href="#Experimentation"><font color="#FFFFFF">Experimentation</font></a></font></p>
+                  </li>
+                  <li style="color: #FFFFFF">
+                    <p style="margin-top: 0; margin-bottom: 0"><font
+                        face="Arial" size="2"> Requirements</font></p>
+                    <p style="margin-top: 0; margin-bottom: 0"> <font
+                        face="Arial" size="2"><a
+                          href="#Software%20Requirements"> <font
+                            color="#FFFFFF">Software</font></a></font></p>
+                    <p style="margin-top: 0; margin-bottom: 0"> <font
+                        face="Arial" size="2"><a
+                          href="#Hardware%20Requirements"> <font
+                            color="#FFFFFF">Hardware</font></a></font></p>
+                  </li>
+                  <li>
+                    <p style="margin-top: 0; margin-bottom: 0"><font
+                        face="Arial" size="2"> <a href="#Workplan"><font
+                            color="#FFFFFF">Work Plan</font></a></font></p>
+                  </li>
+                  <li>
+                    <p style="margin-top: 0; margin-bottom: 0"><font
+                        face="Arial" size="2"> <a href="#Deliverables"><font
+                            color="#FFFFFF">Deliverables</font></a></font></p>
+                  </li>
+                  <li>
+                    <p style="margin-top: 0; margin-bottom: 0"><font
+                        face="Arial" size="2"> <a href="#References"><font
+                            color="#FFFFFF">References</font></a></font></p>
+                  </li>
+                  <li>
+                    <p style="margin-top: 0; margin-bottom: 0"> <font
+                        face="Arial" color="#FFFFFF" size="2"><a
+                          href="#Project%20Links"> <font
+                            color="#FFFFFF">Project Links</font></a></font></p>
+                  </li>
+                </ul>
+                <p><font size="3"><br>
+                    <br>
+                  </font></p>
+              </td>
+              <td bordercolor="#FFFFFF" bordercolorlight="#000000"
+                bordercolordark="#000000" width="278" valign="top"
+                bgcolor="#FFFFFF"> <font face="Times New Roman"><b> <a
+                      name="Project Members">Project Members</a></b></font>
+                <p> <font face="Times New Roman"> <a
+                      href="mailto:sander-dejong@hotmail.com?subject=API%20Project%20Page">Sander de Jong</a></font></p>
+                <p><font face="Times New Roman"><b><a name="Goals">Goals</a></b></font></p>
+                <p><font face="Times New Roman">This project tries to predict the year an album was released in based on the dynamic range values. In a second experiment it tries to determine the genre based on its dynamic range value. </font> </p>
+                <p><font face="Times New Roman"><b><a name="Abstract">Abstract</a></b></font></p>
+                <p style="text-align: justify"><font face="Times New
+                    Roman">A dataset of dynamic range values was used to predict the year an album was released in and its genre. Determining the year turned out to be less succesful than expected with no impressive results. The values turned out to be a better classifier for the genres, with accuracies reached of up to 99% for distinguishing classical music from rock music. But even for combinations of more modern music genres, accuracies of over 70% are reached.</font></p>
+                <p style="text-align: justify"><font face="Times New
+                    Roman"><b> <a name="Introduction">Introduction</a></b></font></p>
+                <p style="text-align: justify"><font face="Times New
+                    Roman">To make a song stand out from all other, producers and mastering engineers try to increase the loudness of songs played at the same master volume. This phenomenon is called the loudness war. Compression is used which lowers the dynamic range. The trend of decreasing dynamic range could be a good classifier for determining in which year an album was released.</font></p>
+                <p style="text-align: justify"><font face="Times New
+                    Roman"><b><a name="Design"> Design</a></b></font></p>
+                <p style="text-align: justify"><font face="Times New
+                    Roman">Dynamic range data was scraped from an online database and cross-referenced using the Last.fm API to get the corresponding genres. Several machine learning classifiers are used to determine the accuracy of the predictions of both year and genre.</font></p>
+                </p>
+                <p><font face="Times New Roman"><b><a name="Software
+                        Requirements">Software Requirements</a></b></font></p>
+                <p><font face="Times New Roman">Python was used to build the necessary software. The Last.fm API was used to get genre data for artists.</font></p>
+                <ul>
+                </ul>
+                <p><font face="Times New Roman"><b><a name="Hardware
+                        Requirements">Hardware Requirements</a></b></font></p>
+                <ul>
+                  <li>
+                    <p><font face="Times New Roman">No specific hardware requirements.</font></p>
+                  </li>
+                </ul>
+                <p class="MsoNormal" align="justify">&nbsp;</p>
+                <p class="MsoNormal">&nbsp;</p>
+              </td>
+              <td width="330" valign="top" bgcolor="#FFFFFF">
+    
+                </ol>
+                <p><font face="Times New Roman"><b><a
+                        name="Deliverables">Deliverables</a></b></font></p>
+                <ul>
+                  <li>
+                    <p align="justify"><font face="Times New Roman">Link
+                        to your technical paper (.pdf)</font></p>
+                  </li>
+                  <li>
+                    <p align="justify"><font face="Times New Roman">Link
+                        to your project code (.zip). The code should
+                        contain everything that is necessary to run your
+                        final demo (your code, the necessary packages,
+                        installation notes, links to data sets, software
+                        documentation etc.).</font></p>
+                  </li>
+                </ul>
+                <p><font face="Times New Roman"><b><a name="References">References</a></b></font></p>
+                <ul>
+                  <li>
+                    <p><a href="http://dr.loudness-war.info">http://dr.loudness-war.info</a></p>
+                  </li>
+                  <li>
+                    <p><a href="http://www.themindgap.nl/?p=114">http://www.themindgap.nl/?p=114</a></p>
+                  </li>
+                  <li>
+                    <p><a href="https://www.last.fm/api/">https://www.last.fm/api/</a></p>
+                  </li>
+                  <p><font face="Times New Roman">For the full reference list see the technical paper.</font></p>
+
+                </ul>
+              </td>
+              <td width="166" bgcolor="#FFFFFF">&nbsp;</td>
+            </tr>
+          </tbody>
+        </table>
+      </center>
+    </div>
+  </body>
+</html>

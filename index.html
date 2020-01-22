@@ -25,7 +25,7 @@
                 <p align="center"><font size="5">Audio Processing and
                     Indexing Project Page</font></p>
                 <p align="center"><font size="5">&lt;Classifying albums based on dynamic range values&gt;</font></p>
-                <p align="center">(Last updated: 14-1-2020)</p>
+                <p align="center">(Last updated: 17-1-2020)</p>
               </td>
               <td width="166" bgcolor="#003366"> <img src="logoULE.gif"
                   width="165" height="106" border="0"></td>
@@ -128,18 +128,23 @@
                 <p style="text-align: justify"><font face="Times New
                     Roman">Dynamic range data was scraped from an online database and cross-referenced using the Last.fm API to get the corresponding genres. Several machine learning classifiers are used to determine the accuracy of the predictions of both year and genre.</font></p>
                 </p>
+                <p style="text-align: justify"><font face="Times New
+                    Roman"><b><a name="Implementation"> Implementation</a></b></font></p>
+                <p style="text-align: justify"><font face="Times New
+                    Roman">The implementation consists of a few Python scripts which are used to scrape the necessary data from the source websites, organise them and run the classifiers to get the predictions.</font></p>
+                </p>
+                <p style="text-align: justify"><font face="Times New
+                    Roman"><b><a name="Experimentation"> Experimentation</a></b></font></p>
+                <p style="text-align: justify"><font face="Times New
+                    Roman">Because dynamic range data did not turn out to be a good predictor for the year it was released in, most experimentation was done on predicting the genre of a song based on its dynamic range. Several combinations of genres were tested together to see the differences in difficulty the predictors had to distinguish them. </font></p>
+                </p>
                 <p><font face="Times New Roman"><b><a name="Software
                         Requirements">Software Requirements</a></b></font></p>
                 <p><font face="Times New Roman">Python was used to build the necessary software. The Last.fm API was used to get genre data for artists.</font></p>
-                <ul>
-                </ul>
                 <p><font face="Times New Roman"><b><a name="Hardware
                         Requirements">Hardware Requirements</a></b></font></p>
-                <ul>
-                  <li>
-                    <p><font face="Times New Roman">No specific hardware requirements.</font></p>
-                  </li>
-                </ul>
+                 <p><font face="Times New Roman">No specific hardware requirements.</font></p>
+
                 <p class="MsoNormal" align="justify">&nbsp;</p>
                 <p class="MsoNormal">&nbsp;</p>
               </td>
@@ -150,16 +155,12 @@
                         name="Deliverables">Deliverables</a></b></font></p>
                 <ul>
                   <li>
-                    <p align="justify"><font face="Times New Roman">Link
-                        to your technical paper (.pdf)</font></p>
+                    <p align="justify"><font face="Times New Roman"><a
+                      href="API_final_project_s2096943.pdf">Technical paper</a </font></p>
                   </li>
                   <li>
-                    <p align="justify"><font face="Times New Roman">Link
-                        to your project code (.zip). The code should
-                        contain everything that is necessary to run your
-                        final demo (your code, the necessary packages,
-                        installation notes, links to data sets, software
-                        documentation etc.).</font></p>
+                    <p align="justify"><font face="Times New Roman"><a
+                      href="code.zip">Project code</a</font></p>
                   </li>
                 </ul>
                 <p><font face="Times New Roman"><b><a name="References">References</a></b></font></p>
